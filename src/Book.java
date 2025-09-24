@@ -106,7 +106,6 @@
 //
 //        // Try to borrow again
 //        member.borrowBook(book2); // Should fail
-//
 //        // Return book
 //        member.returnBook();
 //
