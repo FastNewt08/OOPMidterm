@@ -1,0 +1,2 @@
+public class BankPractice {
+}

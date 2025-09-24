@@ -195,15 +195,11 @@ class LibraryMember{
     public void displayStatus(){
         System.out.println("Member: " + getName() + " (ID: " + getMemberId() + ")");
         if (getBorrowedBook() == null){
-            System.out.println("No Books were borrowed.");
+            System.out.println("No books were borrowed.");
         } else {
             System.out.print("Current book: "); getBorrowedBook().displayInfo();
         }
     }
-//        public void displayStatus(){
-//        System.out.println("Member: " + getName() + " (ID: " + getMemberId() + ")");
-//        System.out.print("Current book: "); getBorrowedBook().displayInfo();
-//    }
     public static void main(String[] args) {
         // Create books
         Book book1 = new Book("Java Basics", "J. Doe", "978-123456");
@@ -227,7 +223,5 @@ class LibraryMember{
 
         // Final status
         member.displayStatus();
-
-
     }
 }
