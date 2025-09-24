@@ -66,5 +66,7 @@ public class BankPractice {
         acc0.displayInfo();
         acc1.displayInfo();
         acc2.displayInfo();
+
+        System.out.println("Total bank accounts: " + BankPractice.getTotalAccounts());
     }
 }
