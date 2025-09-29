@@ -6,7 +6,6 @@ public class ArrayL {
 
         ArrayList <Double> grades = new ArrayList<>();
 
-        int counter = 0;
         double sum = 0;
 
         System.out.println("Enter grades (0 or negative to stop):");
@@ -18,39 +17,34 @@ public class ArrayL {
                 }
                 grades.add(input);
                 sum += input;
-                counter++;
             } else {
                 System.out.println("Invalid Input.");
+                sc.next();
             }
         }
-        System.out.println("Total grades: " + counter);
+        System.out.println("Total grades: " + grades.size());
         System.out.println();
 
-        for (int i = 0; i < counter; i++){
+        for (int i = 0; i < grades.size(); i++){
           System.out.println("Grade " + (i+1) + ": " + grades.get(i));
         }
-        System.out.println();
-        double maxGrade = grades.get(0);
-        for (int i = 0; i < counter; i++){
-            if (grades.get(i) > maxGrade){
-                maxGrade = grades.get(i);
+
+        if (!grades.isEmpty()){
+            double maxGrade = grades.get(0);
+            double minGrade = grades.get(0);
+
+            for (int i = 0; i < grades.size(); i++){
+                double current = grades.get(i);
+                if (current > maxGrade) maxGrade = current;
+                if (current < minGrade) minGrade = current;
             }
-        }
-        System.out.println("Highest grade: " + maxGrade);
+            double average = sum/grades.size();
 
-        double minGrade = grades.get(0);
-        for (int i = 0; i < counter; i++){
-            if (grades.get(i) < minGrade){
-                minGrade = grades.get(i);
-            }
+            System.out.println("\nHighest grade: " + maxGrade);
+            System.out.println("Lowest grade: " + minGrade);
+            System.out.printf("Average grade: %.2f%n" , average);
+        } else {
+            System.out.println("No grades were entered.");
         }
-        System.out.println("Lowest grade: " + minGrade);
-
-        double average = 0;
-        for (int i = 0; i < counter; i++){
-            average = sum/counter;
-        }
-        System.out.printf("Average grade: %.2f%n" , average);
-
     }
 }
