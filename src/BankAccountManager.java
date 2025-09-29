@@ -4,7 +4,7 @@ class BankAccount{
     private double balance;
     private static int totalAccounts = 0;
 
-    public BankAccount(String ownerName, String accountNumber, double initialBalance) {
+    BankAccount(String ownerName, String accountNumber, double initialBalance) {
         this.ownerName = ownerName;
         this.accountNumber = accountNumber;
         if (initialBalance < 0){
